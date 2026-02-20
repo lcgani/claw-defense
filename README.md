@@ -2,22 +2,23 @@
 
 Real-time security system for OpenClaw using Elasticsearch Agent Builder. Prevents prompt injection, malicious skills, and configuration vulnerabilities through multi-agent threat detection.
 
-## Problem
+## The Problem
 
-OpenClaw (CVE-2026-25253, CVSS 8.8) has critical security gaps:
+OpenClaw powers thousands of AI agents across enterprises, but a critical vulnerability (CVE-2026-25253, CVSS 8.8) left them defenseless. Security teams watched helplessly as 35% of deployments fell to attacks they couldn't see coming. The ClawHub marketplace became a breeding ground for malicious skills - 341 out of 2,857 packages contained hidden threats. Companies had no way to audit configurations, monitor runtime behavior, or stop attacks before damage occurred.
 
-- 35% of deployments compromised
-- 12% malicious skills in ClawHub (341/2,857)
-- No enterprise governance or real-time protection
+Traditional security tools failed because they weren't built for AI agents. By the time threats were detected, sensitive data was already exfiltrated, credentials compromised, and systems breached.
 
-## Solution
+## What Claw Defense Does
 
-Four specialized agents powered by Elasticsearch detect and block threats before execution:
+Claw Defense deploys four AI security agents that work together to protect OpenClaw instances in real-time. Think of it as a security operations center that never sleeps, analyzing every configuration, monitoring every action, and blocking threats before they execute.
 
-1. **Config Audit Agent** - Scans for exposed tokens, weak authentication, dangerous permissions
-2. **Runtime Monitor Agent** - Detects prompt injection and data exfiltration in real-time
-3. **Skill Scanner Agent** - Analyzes skills for malware using pattern matching
-4. **Breach Detector Agent** - Correlates threat indicators using ES|QL queries
+**Config Audit Agent** hunts through your OpenClaw configurations looking for exposed API tokens, weak authentication, and dangerous wildcard permissions. It finds vulnerabilities you didn't know existed.
+
+**Runtime Monitor Agent** watches every prompt and action in real-time, detecting prompt injection attempts and data exfiltration patterns as they happen - not hours later in log files.
+
+**Skill Scanner Agent** analyzes every skill before installation, using pattern matching to identify malicious code, suspicious imports, and token theft attempts hidden in seemingly innocent packages.
+
+**Breach Detector Agent** connects the dots across all security events using Elasticsearch's ES|QL queries, correlating threat indicators to catch sophisticated attacks that single-point solutions miss.
 
 ## Architecture
 
@@ -89,12 +90,6 @@ See `examples/openclaw_integration.py` for full implementation.
 - FastAPI (REST API)
 - Slack SDK (alerts)
 - Docker (deployment)
-
-## Requirements
-
-- Python 3.11+
-- Docker & Docker Compose
-- Elasticsearch 8.16+
 
 ## License
 
