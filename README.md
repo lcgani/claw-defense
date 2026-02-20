@@ -98,4 +98,4 @@ See `examples/openclaw_integration.py` for full implementation.
 
 ## License
 
-Apache 2.0
+MIT
