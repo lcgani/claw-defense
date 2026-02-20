@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Environment
+.env
+.env.local
+
+# Elasticsearch
+data/
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+*.log
