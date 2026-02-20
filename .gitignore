@@ -40,3 +40,7 @@ yarn-error.log
 
 # Build artifacts
 *.log
+
+# Kiro and subprojects
+.kiro/
+project-two/
